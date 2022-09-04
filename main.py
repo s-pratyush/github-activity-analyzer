@@ -1,7 +1,7 @@
 from flask import Flask
 import os
 from dotenv import load_dotenv
-from utils import get_repo_list_from_csv
+# from utils import get_repo_list_from_csv
 from flask_restful import Resource, Api
 
 app = Flask(__name__)
