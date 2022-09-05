@@ -25,8 +25,8 @@ default_args = {
 
 dag = DAG(
     "github_data_collection",
-    description="Simple tutorial DAG",
-    schedule_interval="0 12 * * *",
+    description="data collection from github",
+    schedule_interval="0 * * * *",
     default_args=default_args,
     catchup=False,
 )
@@ -41,6 +41,5 @@ t1 = PythonOperator(
 t0 = DummyOperator(task_id="dummy_task", retries=3, dag=dag)
 
 # t2 = PythonOperator(task_id="hello_task", python_callable=print_hello, dag=dag)
-
 # sets downstream foe t1
 t0 >> t1
