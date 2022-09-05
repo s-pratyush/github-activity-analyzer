@@ -8,14 +8,16 @@ from utils import collect_repo_data
 #     # collect_repo_data()
 #     return "function called"
 
+
 def data_collection():
     collect_repo_data()
     return "data collected"
 
+
 default_args = {
     "owner": "airflow",
     "depends_on_past": False,
-    "start_date": '2020-10-01',
+    "start_date": "2020-10-01",
     "email": ["airflow@example.com"],
     "email_on_failure": False,
     "email_on_retry": False,
