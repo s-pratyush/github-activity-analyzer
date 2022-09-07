@@ -20,8 +20,8 @@ class User_Stats(Resource):
 
     # return count of commits and pull requests for a user
     def get(self, user_id):
+        user_id = int(user_id)
         today = date.isoformat(date.today())
-        print(today)
         commits = Github_Activities.query.filter(
             and_(
                 Github_Activities.author_id == user_id,
@@ -76,7 +76,7 @@ class Repo_Stats(Resource):
         )
 
 
-api.add_resource(User_Stats, "/github/user/stats/<int:user_id>")
+api.add_resource(User_Stats, "/github/user/stats/<string:user_id>")
 api.add_resource(
     Repo_Stats, "/github/repo/stats/<string:repo_owner>/<string:repo_name>"
 )
